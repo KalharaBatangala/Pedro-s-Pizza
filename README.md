@@ -72,4 +72,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 =======
 # Pedro-s-Pizza
 React application 
+This application is hosted in Microsoft Azure Cloud:
+https://pedropizza.azurewebsites.net/ 
+
 >>>>>>> 31ee528e95337f8c34921a11747938a7840a46c3
