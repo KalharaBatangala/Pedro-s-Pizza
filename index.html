@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1c1714" />
+    <meta
+      name="description"
+      content="Vito's Pizza House — wood-fired Neapolitan pizza, slow-proofed dough and family recipes. Order online for delivery or pickup."
+    />
+    <meta property="og:title" content="Vito's Pizza House" />
+    <meta property="og:description" content="Wood-fired pizza, made with love. Order online for delivery or pickup." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..800;1,9..144,500..700&family=DM+Sans:opsz,wght@9..40,400..700&family=Caveat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Vito's Pizza House · Wood-Fired Pizza</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to order from Vito's Pizza House.</noscript>
+    <div id="root"></div>
+
+    <!--
+      Netlify Forms only detects forms that exist in static HTML at deploy time.
+      These hidden copies register the "order" and "contact" forms; the React
+      pages submit to them with fetch(). Field names must match.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" />
+      <input name="name" />
+      <input name="email" />
+      <input name="phone" />
+      <textarea name="message"></textarea>
+    </form>
+    <form name="order" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" />
+      <input name="orderNumber" />
+      <input name="method" />
+      <input name="name" />
+      <input name="phone" />
+      <input name="email" />
+      <input name="address" />
+      <input name="payment" />
+      <textarea name="notes"></textarea>
+      <textarea name="items"></textarea>
+      <input name="total" />
+    </form>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

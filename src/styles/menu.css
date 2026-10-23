@@ -1,0 +1,126 @@
+.menu-toolbar {
+  position: sticky;
+  top: var(--nav-h);
+  z-index: 20;
+  background: rgba(251, 245, 236, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.menu-toolbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 14px 0;
+}
+
+.category-tabs,
+.menu-toolbar__filters {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  /* Room for focus outlines inside the scroller */
+  padding: 4px;
+  margin: -4px;
+}
+
+.category-tabs::-webkit-scrollbar,
+.menu-toolbar__filters::-webkit-scrollbar {
+  display: none;
+}
+
+.chip--diet.is-active.chip--veg,
+.chip--diet.is-active.chip--vegan {
+  background: var(--basil);
+  border-color: var(--basil);
+}
+
+.chip--diet.is-active.chip--spicy {
+  background: var(--tomato);
+  border-color: var(--tomato);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--paper);
+  color: var(--ink-soft);
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.search:focus-within {
+  border-color: var(--tomato);
+}
+
+.search input {
+  border: none;
+  background: none;
+  outline: none;
+  padding: 9px 0;
+  width: 190px;
+  color: var(--ink);
+}
+
+.menu-body {
+  padding: 48px 0 96px;
+}
+
+.menu-section {
+  margin-bottom: 64px;
+  scroll-margin-top: calc(var(--nav-h) + 90px);
+}
+
+.menu-section__head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px dashed var(--line);
+}
+
+.menu-section__head h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+}
+
+.menu-section__head p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .menu-toolbar {
+    position: static;
+  }
+
+  /* nowrap matters: a wrapping column would size to its widest child and
+     stop the tab row from scrolling horizontally */
+  .menu-toolbar__inner {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+
+  .search {
+    flex: 1 0 100%;
+  }
+
+  .search input {
+    width: 100%;
+  }
+
+  .menu-toolbar__filters {
+    flex-wrap: wrap;
+  }
+}

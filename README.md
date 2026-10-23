@@ -1,78 +1,59 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# Vito's Pizza House 🍕
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A wood-fired pizzeria website with online ordering, built with React and Vite.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Full menu** with categories, search, and vegetarian / vegan / spicy filters
+- **Pizza builder**: choose a size and add extra toppings, with live pricing
+- **Cart drawer** with quantity controls, a free-delivery progress bar and add-on suggestions
+- **Checkout** for delivery or pickup, promo codes (`FIRSTSLICE`, `VITO10`), delivery fee and tax
+- **Order confirmation** page with an order tracker and receipt
+- The cart is saved in the browser, so it survives a page refresh
+- Orders and contact messages are captured with **Netlify Forms** (no backend needed)
+- Responsive layout that respects reduced-motion settings
 
-### `npm start`
+## Getting started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install
+npm run dev       # start the dev server at http://localhost:5173
+npm run build     # build for production into dist/
+npm run preview   # serve the production build locally
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Requires Node.js 20.19+ or 22.12+.
 
-### `npm test`
+## Customising
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| What                                     | Where                     |
+| ---------------------------------------- | ------------------------- |
+| Address, phone, hours, socials           | `src/data/site.js`        |
+| Delivery fee, tax, currency, promo codes | `src/data/site.js`        |
+| Menu items, sizes, extra toppings        | `src/data/menu.js`        |
+| Colours and fonts                        | `src/styles/global.css` (`:root`) |
 
-### `npm run build`
+## Deploying to Netlify
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`netlify.toml` already configures the build command, publish folder, Node version and SPA redirects.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Push this repo to GitHub.
+2. In Netlify, choose **Add new site → Import an existing project** and pick the repo.
+3. Deploy. Netlify reads all settings from `netlify.toml`.
+4. Under **Site configuration → Forms**, enable form detection, then redeploy. Orders show up under the
+   `order` form and messages under `contact`. You can add email notifications there too.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Or deploy from your terminal with the Netlify CLI:
 
-### `npm run eject`
+```bash
+npx netlify-cli login
+npx netlify-cli deploy --build --prod
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Photo credits
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Food and restaurant photography from [Unsplash](https://unsplash.com), used under the Unsplash License.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# Pedro-s-Pizza
-React application <br>
-This application is hosted in Microsoft Azure Cloud:
-https://pedropizza.azurewebsites.net/ 
-
->>>>>>> 31ee528e95337f8c34921a11747938a7840a46c3
+Designed & built by Kalhara Batangala.
